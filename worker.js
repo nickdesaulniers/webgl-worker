@@ -28,7 +28,7 @@ function createContext (canvas) {
     // camera space -> screen
     var projMatrix = mat4.create();
     mat4.perspective(projMatrix, 30 * Math.PI / 180,
-      canvas.clientWidth / canvas.clientHeight, 1, 10);
+      canvas.width / canvas.height, 1, 10);
     gl.uniformMatrix4fv(uniforms.uProjMatrix, false, projMatrix);
 
     render = createAnimate(gl, uniforms.uModelMatrix, n);
